@@ -21,10 +21,12 @@
 #      <Put a description of the supported Overrides here
 #
 #------------------------------------------------------------------------------
+PLATFORM        = HOST
 include sources.mk
 
 # Platform Overrides
-OTHER_FLAGS = -g -Wall -Werror -std=c99 -O0
+FUNCTION        = COURSE1
+OTHER_FLAGS = -g -Wall -Werror -std=c99 -O0 -D$(FUNCTION)
 TARGET = c1m2
 
 

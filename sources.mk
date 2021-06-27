@@ -1,4 +1,3 @@
-#******************************************************************************
 # Copyright (C) 2017 by Alex Fosdick - University of Colorado
 #
 # Redistribution, modification or use of this software in source or binary
@@ -12,10 +11,9 @@
 # Add your Source files to this variable
 #
 ifeq ($(PLATFORM),HOST)
-  SOURCES = main.c memory.c
-  INCLUDES = -I../include/common
+  SOURCES = ./src/main.c ./src/memory.c ./src/data.c ./src/course1.c ./src/stats.c
+  INCLUDES = -I./include/common
 else
-  SOURCES = stats.c main.c memory.c interrupts_msp432p401r_gcc.c startup_msp432p401r_gcc.c system_msp432p401r.c
-  INCLUDES = -I../include/common -I../include/msp432 -I../include/CMSIS
+  SOURCES = ./src/stats.c ./src/main.c ./src/memory.c ./src/interrupts_msp432p401r_gcc.c ./src/startup_msp432p401r_gcc.c ./src/system_msp432p401r.c
+  INCLUDES = -I./include/common -I./include/msp432 -I./include/CMSIS
 endif
-

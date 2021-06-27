@@ -20,35 +20,74 @@
  * @date April 1 2017
  *
  */
-#include "platform.h"
-#include "memory.h"
+#include "course1.h"
 
-#define MAX_LENGTH (10)
-char buffer[MAX_LENGTH];
 
 /* A pretty boring main file */
 int main(void) {
-  unsigned int i;
-  char value;
 
-  /* Code below does some arbitrary memory Reads & writes */
-  clear_all(buffer, MAX_LENGTH);
-  set_all( ( buffer + 8 ), 43, 2); 
-  set_value(buffer, 0, 0x61);
-  value = get_value(buffer, 9);
-  set_value(buffer, 9, (value + 0x27));
-  set_value(buffer, 3, 0x37);
-  set_value(buffer, 1, 88);
-  set_value(buffer, 4, '2');
-  value = get_value(buffer, 1);
-  set_value(buffer, 2, 121);
-  set_value(buffer, 7, (value - 12));
-  set_value(buffer, 5, 0x5F);
+    /******************************************************************************
+     FUNCTION = COURSE1
+    ******************************************************************************/
+    #if defined (COURSE1)
+      course1();
 
-  for ( i = 0; i < MAX_LENGTH; i++ ){
-    PRINTF("%c", buffer[i]);
-  }
-  PRINTF("\n");
+    /******************************************************************************
+     FUNCTION = TEST_DATA1
+    ******************************************************************************/
+    #elif defined (TEST_DATA1)
+      test_data1();
+
+    /******************************************************************************
+     FUNCTION = TEST_DATA2
+    ******************************************************************************/
+    #elif defined (TEST_DATA2)
+      test_data2();
+
+    /******************************************************************************
+     FUNCTION = TEST_MEMMOVE1
+    ******************************************************************************/
+    #elif defined (TEST_MEMMOVE1)
+      test_memmove1();
+
+    /******************************************************************************
+     FUNCTION = TEST_MEMMOVE2
+    ******************************************************************************/
+    #elif defined (TEST_MEMMOVE2)
+      test_memmove2();
+
+    /******************************************************************************
+     FUNCTION = TEST_MEMMOVE3
+    ******************************************************************************/
+    #elif defined (TEST_MEMMOVE3)
+      test_memmove3();
+
+    /******************************************************************************
+     FUNCTION = TEST_MEMCOPY
+    ******************************************************************************/
+    #elif defined (TEST_MEMCOPY)
+      test_memcopy();
+
+    /******************************************************************************
+     FUNCTION = TEST_MEMSET
+    ******************************************************************************/
+    #elif defined (TEST_MEMSET)
+      test_memset();
+
+    /******************************************************************************
+     FUNCTION = TEST_REVERSE
+    ******************************************************************************/
+    #elif defined (TEST_REVERSE)
+      test_reverse();
+
+    /******************************************************************************
+     FUNCTION - Unsupported
+    ******************************************************************************/
+    #else
+        #error "Function provided is not supported in this Build System"
+    #endif
+
+    return 0;
+
   return 0;
 }
-

@@ -23,33 +23,11 @@
 
 #include <stdio.h>
 #include "stats.h"
+#include "platform.h"
+
 
 /* Size of the Data Set */
 #define SIZE (40)
-
-void main() {
-
-  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
-                              114, 88,   45,  76, 123,  87,  25,  23,
-                              200, 122, 150, 90,   92,  87, 177, 244,
-                              201,   6,  12,  60,   8,   2,   5,  67,
-                                7,  87, 250, 230,  99,   3, 100,  90};
-
-  /* Other Variable Declarations Go Here */
-  unsigned char sorted[SIZE] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-	                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-  /* Statistics and Printing Functions Go Here */
-  printf("Printing the original array.\n");
-  print_array(test, SIZE);
-  printf("\nPrinting statistics.\n");
-  print_statistics(test, SIZE);
-  sort_array(test, SIZE, sorted);
-  printf("\nNow printing the sorted array.\n");
-  print_array(sorted, SIZE);
-}
-
 
 
 /* Given an array of data and a length, returns the maximum */
@@ -98,7 +76,6 @@ void print_array(unsigned char *array, unsigned int n) {
 
 /* Given an array of data and a length, returns the median value */
 unsigned int find_median(unsigned char *array, unsigned int n) {
-  unsigned int i = 0;
   unsigned int output = 0;
   
   output = array[(n/2)+1];
@@ -132,7 +109,7 @@ void sort_array(unsigned char *array, unsigned int n, unsigned char *sorted_arra
 
   for (i=0 ; i<n ; i++) {
 
-    array = array_start;
+    array_start = array;
     next_lowest = 0;
     for (j=0 ; j<n ; j++) {
       
