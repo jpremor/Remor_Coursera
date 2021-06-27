@@ -27,7 +27,7 @@ include sources.mk
 # Platform Overrides
 FUNCTION        = COURSE1
 OTHER_FLAGS = -g -Wall -Werror -std=c99 -O0 -D$(FUNCTION)
-TARGET = c1m2
+TARGET = final
 
 
 ifeq ($(PLATFORM),HOST)
