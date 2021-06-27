@@ -19,6 +19,8 @@
 #ifndef __DATA_H__
 #define __DATA_H__
 
+#include <stddef.h>
+#include <memory.h>
 #define ABS(a) ((a) < 0 ? -(a) : (a))
 
 /**

@@ -92,7 +92,7 @@ int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base) {
   for (i=1; i < digits; i++) {
       out = out*base + ptr[i] - '0';
   }
-  if (prt[0] == '-') { 
+  if (ptr[0] == '-') { 
     out = -out;
   }
 
